@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --amazon-orange: #FF9900;
+            --amazon-light-orange: #FEBD69;
+            --amazon-blue: #232F3E;
+            --amazon-dark-blue: #131921;
+            --amazon-green: #00A8E1;
+            --amazon-yellow: #F0C14B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #EAEDED;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--amazon-dark-blue);
+            color: white;
+            width: 100%;
+        }
+
+        .nav-belt {
+            display: flex;
+            align-items: center;
+            height: 60px;
+            padding: 0 15px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            padding: 10px 8px 8px 8px;
+            margin-right: 8px;
+        }
+
+        .nav-logo img {
+            width: 97px;
+            height: 30px;
+        }
+
+        .nav-logo:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+            margin-right: 7px;
+        }
+
+        .nav-location {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+            margin-right: 8px;
+        }
+
+        .nav-location:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+            padding: 4px;
+        }
+
+        .location-icon {
+            font-size: 18px;
+            margin-right: 4px;
+        }
+
+        .location-text {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+        }
+
+        .location-text span:last-child {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nav-search {
+            display: flex;
+            flex: 1;
+            height: 40px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-dropdown {
+            background-color: #f3f3f3;
+            border: none;
+            padding: 5px 10px;
+            border-right: 1px solid #cdcdcd;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            font-size: 12px;
+            width: 50px;
+            color: #555;
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .search-button {
+            width: 45px;
+            background-color: var(--amazon-light-orange);
+            border: none;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            color: #111;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background-color: var(--amazon-orange);
+        }
+
+        .nav-tools {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item {
+            padding: 5px 9px;
+            margin-left: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+        }
+
+        .nav-item:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+            padding: 4px 8px;
+        }
+
+        .nav-line-1 {
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        .nav-line-2 {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .cart-icon {
+            font-size: 30px;
+        }
+
+        .cart-count {
+            color: var(--amazon-orange);
+            font-weight: bold;
+            position: relative;
+            top: -20px;
+            left: -17px;
+        }
+
+        .nav-main {
+            background-color: var(--amazon-blue);
+            color: white;
+            height: 39px;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+        }
+
+        .hamburger {
+            display: flex;
+            align-items: center;
+            padding: 8px 9px;
+            cursor: pointer;
+        }
+
+        .hamburger:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+            padding: 7px 8px;
+        }
+
+        .hamburger i {
+            margin-right: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-link {
+            padding: 8px 9px;
+            margin-right: 10px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            border: 1px solid white;
+            border-radius: 2px;
+            padding: 7px 8px;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 100%;
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .banner {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            margin-top: -150px;
+        }
+
+        .banner-gradient {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to bottom, rgba(234, 237, 237, 0), #EAEDED);
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 20px;
+            height: 420px;
+            border-radius: 4px;
+        }
+
+        .card h2 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .card-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            height: 300px;
+        }
+
+        .card-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-item img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .card-item span {
+            font-size: 12px;
+            color: #111;
+        }
+
+        .card-link {
+            color: #007185;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .card-link:hover {
+            color: #C7511F;
+            text-decoration: underline;
+        }
+
+        .product-carousel {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .carousel-title {
+            font-size: 21px;
+        }
+
+        .carousel-link {
+            color: #007185;
+            font-size: 14px;
+        }
+
+        .carousel-link:hover {
+            color: #C7511F;
+            text-decoration: underline;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            scrollbar-width: thin;
+            padding-bottom: 5px;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+
+        .product-item {
+            min-width: 160px;
+            max-width: 160px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 14px;
+            color: #0F1111;
+            margin-bottom: 5px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 36px;
+        }
+
+        .product-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .rating-stars {
+            color: var(--amazon-orange);
+            font-size: 14px;
+            margin-right: 5px;
+        }
+
+        .rating-count {
+            font-size: 12px;
+            color: #007185;
+        }
+
+        .product-price {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .price-decimal {
+            font-size: 12px;
+            vertical-align: super;
+        }
+
+        .prime-badge {
+            font-size: 12px;
+            color: #00A8E1;
+            display: flex;
+            align-items: center;
+        }
+
+        /* AR Feature */
+        .ar-container {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .ar-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .ar-title {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        .ar-badge {
+            background-color: var(--amazon-orange);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .ar-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .ar-desc {
+            flex: 1;
+        }
+
+        .ar-desc p {
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .ar-interface {
+            flex: 2;
+            height: 400px;
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .ar-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ar-product {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.3));
+        }
+
+        .ar-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 15px;
+            border-radius: 30px;
+        }
+
+        .ar-button {
+            background-color: var(--amazon-blue);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .ar-button:hover {
+            background-color: var(--amazon-dark-blue);
+        }
+
+        .product-selector {
+            display: flex;
+            margin-top: 20px;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+
+        .product-option {
+            width: 80px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .product-option.active {
+            border-color: var(--amazon-orange);
+        }
+
+        .product-option img {
+            width: 100%;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        /* Buy button */
+        .ar-buy {
+            display: flex;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .buy-now {
+            background-color: var(--amazon-yellow);
+            border: 1px solid #a88734;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .buy-now:hover {
+            background-color: #f4cb59;
+        }
+
+        .add-to-cart {
+            background-color: var(--amazon-light-orange);
+            border: 1px solid #ca7c00;
+            border-radius: 20px;
+            padding: 8px 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .add-to-cart:hover {
+            background-color: var(--amazon-orange);
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            background-color: white;
+        }
+
+        .back-to-top {
+            background-color: var(--amazon-blue);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+            background-color: #37475a;
+        }
+
+        .footer-content {
+            background-color: var(--amazon-dark-blue);
+            color: white;
+            padding: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+        }
+
+        .footer-column h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #DDD;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            padding: 20px 0;
+            background-color: var(--amazon-dark-blue);
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #3a4553;
+        }
+
+        .footer-logo img {
+            width: 100px;
+        }
+
+        .footer-bottom {
+            background-color: var(--amazon-dark-blue);
+            color: #DDD;
+            text-align: center;
+            padding: 0 0 30px;
+            font-size: 12px;
+        }
+
+        .footer-bottom a {
+            color: #DDD;
+            margin: 0 10px;
+        }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-header {
+            background-color: var(--amazon-dark-blue);
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 20px;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .device-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .device-selector h3 {
+            margin-bottom: 15px;
+        }
+
+        .device-options {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .device-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+        }
+
+        .device-option.selected {
+            border-color: var(--amazon-orange);
+            background-color: rgba(255, 153, 0, 0.1);
+        }
+
+        .device-icon {
+            font-size: 40px;
+            color: var(--amazon-blue);
+        }
+
+        .device-name {
+            font-weight: bold;
+        }
+
+        .ar-preview {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .qr-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+        }
+
+        .qr-instructions {
+            margin-top: 20px;
+            color: #555;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modal-footer {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .modal-button {
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .cancel-button {
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+
+        .cancel-button:hover {
+            background-color: #e1e1e1;
+        }
+
+        .continue-button {
+            background-color: var(--amazon-yellow);
+            border: 1px solid #a88734;
+        }
+
+        .continue-button:hover {
+            background-color: #f4cb59;
+        }
+
+        .media-controls {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border-radius: 30px;
+            gap: 15px;
+        }
+
+        .desktop-preview .media-controls {
+            display: flex;
+        }
+
+        .media-button {
+            background-color: var(--amazon-blue);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .media-button:hover {
+            background-color: var(--amazon-dark-blue);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .card-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .ar-content {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-belt {
+                flex-wrap: wrap;
+            }
+
+            .nav-search {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .nav-main {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="nav-belt">
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="/api/placeholder/97/30" alt="Amazon Logo">
+                </a>
+            </div>
+
+            <div class="nav-location">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="location-text">
+                    <span>Deliver to</span>
+                    <span>United States</span>
+                </div>
+            </div>
+
+            <div class="nav-search">
+                <select class="search-dropdown">
+                    <option>All</option>
+                </select>
+                <input type="text" class="search-input" placeholder="Search Amazon">
+                <button class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="nav-tools">
+                <div class="nav-item">
+                    <span class="nav-line-1">Hello, sign in</span>
+                    <span class="nav-line-2">Account & Lists</span>
+                </div>
+
+                <div class="nav-item">
+                    <span class="nav-line-1">Returns</span>
+                    <span class="nav-line-2">& Orders</span>
+                </div>
+
+                <div class="nav-item">
+                    <span class="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-main">
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+                <span>All</span>
+            </div>
+
+            <div class="nav-links">
+                <div class="nav-link">Today's Deals</div>
+                <div class="nav-link">Customer Service</div>
+                <div class="nav-link">Registry</div>
+                <div class="nav-link">Gift Cards</div>
+                <div class="nav-link">Sell</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="banner">
+            <img src="/api/placeholder/1500/600" alt="Banner" class="banner-img">
+            <div class="banner-gradient"></div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <h2>Shop by Category</h2>
+                <div class="card-content">
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Electronics">
+                        <span>Electronics</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Computers">
+                        <span>Computers</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Fashion">
+                        <span>Fashion</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Books">
+                        <span>Books</span>
+                    </div>
+                </div>
+                <a href="#" class="card-link">Shop all categories</a>
+            </div>
+
+            <div class="card">
+                <h2>Gaming accessories</h2>
+                <div class="card-content">
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Headsets">
+                        <span>Headsets</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Keyboards">
+                        <span>Keyboards</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Mice">
+                        <span>Mice</span>
+                    </div>
+                    <div class="card-item">
+                        <img src="/api/placeholder/150/150" alt="Chairs">
+                        <span>Chairs</span>
+                    </div>
+                </div>
+                <a href="#" class="card-link">See more</a>
+            </div>
+
+            <div class="card">
+                <h2>Top Deal</h2>
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px;">
+                    <img src="/api/placeholder/200/200" alt="Deal" style="margin-bottom: 15px;">
+                    <div
+                        style="background-color: #CC0C39; color: white; padding: 5px 10px; border-radius: 3px; font-size: 14px; margin-bottom: 10px;">
+                        Up to 42% off</div>
+                    <div style="font-size: 14px; margin-bottom: 5px;">Deal of the day</div>
+                    <div style="font-size: 14px; text-align: center;">Electronics & Tech Essentials</div>
+                </div>
+                <a href="#" class="card-link">See all deals</a>
+            </div>
+
+            <div class="card">
+                <h2>Sign in for your best experience</h2>
+                <div
+                    style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px;">
+                    <button
+                        style="background-color: #FFD814; width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #FCD200; cursor: pointer; margin-bottom: 20px;">Sign
+                        in securely</button>
+                    <img src="/api/placeholder/270/180" alt="Ad" style="max-width: 100%;">
+                </div>
+            </div>
+        </div>
+
+        <!-- AR Feature - New Addition -->
+        <div class="ar-container">
+            <div class="ar-header">
+                <h2 class="ar-title">Try Before You Buy with AR View</h2>
+                <span class="ar-badge">NEW</span>
+            </div>
+
+            <div class="ar-content">
+                <div class="ar-desc">
+                    <p>See how products look in your space before buying! Our new AR feature lets you visualize Amazon
+                        products in your home using your device's camera.</p>
+                    <p>Perfect for furniture, decor, electronics, and more. Make confident buying decisions by seeing
+                        exactly how items will fit and look in your environment.</p>
+                    <div class="ar-buy">
+                        <button class="buy-now" id="openArModal">Try in Your Space</button>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                    <div class="product-selector">
+
+                        <div class="product-option active" data-product="chair">
+                            <img src="/api/placeholder/80/80" alt="Office Chair">
+                        </div>
+                        <div class="product-option" data-product="lamp">
+                            <img src="/api/placeholder/80/80" alt="Desk Lamp">
+                        </div>
+                        <div class="product-option" data-product="desk">
+                            <img src="/api/placeholder/80/80" alt="Computer Desk">
+                        </div>
+                        <div class="product-option" data-product="bookshelf">
+                            <img src="/api/placeholder/80/80" alt="Bookshelf">
+                        </div>
+                        <div class="product-option" data-product="tv">
+                            <img src="/api/placeholder/80/80" alt="Television">
+                        </div>
+                    </div>
+                </div>
+                <div class="ar-interface">
+                    <img src="/api/placeholder/800/400" alt="Living Room" class="ar-video">
+                    <img src="/api/placeholder/200/200" alt="Office Chair" class="ar-product">
+                    <div class="ar-controls">
+                        <button class="ar-button">
+                            <i class="fas fa-rotate"></i> Rotate
+                        </button>
+                        <button class="ar-button">
+                            <i class="fas fa-expand-arrows-alt"></i> Resize
+                        </button>
+                        <button class="ar-button">
+                            <i class="fas fa-sync-alt"></i> Reset
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Carousel -->
+        <div class="product-carousel">
+            <div class="carousel-header">
+                <h2 class="carousel-title">Based on your shopping trends</h2>
+                <a href="#" class="carousel-link">See more</a>
+            </div>
+            <div class="carousel-container">
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 1" class="product-image">
+                    <div class="product-title">Wireless Bluetooth Headphones with Noise Cancellation</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">1,234</div>
+                    </div>
+                    <div class="product-price">$149<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 2" class="product-image">
+                    <div class="product-title">Smart Watch with Heart Rate Monitor</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">876</div>
+                    </div>
+                    <div class="product-price">$79<span class="price-decimal">95</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 3" class="product-image">
+                    <div class="product-title">Portable Bluetooth Speaker Waterproof</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">2,531</div>
+                    </div>
+                    <div class="product-price">$39<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 4" class="product-image">
+                    <div class="product-title">Wireless Charging Pad for iPhone and Android</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">1,087</div>
+                    </div>
+                    <div class="product-price">$24<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 5" class="product-image">
+                    <div class="product-title">Smart Home Security Camera System</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">3,452</div>
+                    </div>
+                    <div class="product-price">$129<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 6" class="product-image">
+                    <div class="product-title">Laptop Backpack with USB Charging Port</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">967</div>
+                    </div>
+                    <div class="product-price">$35<span class="price-decimal">95</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 7" class="product-image">
+                    <div class="product-title">Wireless Keyboard and Mouse Combo</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">1,345</div>
+                    </div>
+                    <div class="product-price">$49<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Another Product Carousel -->
+        <div class="product-carousel">
+            <div class="carousel-header">
+                <h2 class="carousel-title">Top Sellers in Electronics</h2>
+                <a href="#" class="carousel-link">See more</a>
+            </div>
+            <div class="carousel-container">
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 1" class="product-image">
+                    <div class="product-title">Wireless Earbuds with Charging Case</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">5,678</div>
+                    </div>
+                    <div class="product-price">$59<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 2" class="product-image">
+                    <div class="product-title">Smart LED TV 4K Ultra HD</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">2,341</div>
+                    </div>
+                    <div class="product-price">$399<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 3" class="product-image">
+                    <div class="product-title">Gaming Mouse with RGB Lighting</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">3,987</div>
+                    </div>
+                    <div class="product-price">$29<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 4" class="product-image">
+                    <div class="product-title">Tablet with Keyboard Case</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">1,542</div>
+                    </div>
+                    <div class="product-price">$159<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 5" class="product-image">
+                    <div class="product-title">WiFi Range Extender</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">2,764</div>
+                    </div>
+                    <div class="product-price">$34<span class="price-decimal">95</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 6" class="product-image">
+                    <div class="product-title">External Hard Drive 2TB</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <div class="rating-count">4,123</div>
+                    </div>
+                    <div class="product-price">$79<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+
+                <div class="product-item">
+                    <img src="/api/placeholder/160/160" alt="Product 7" class="product-image">
+                    <div class="product-title">Smart Home Assistant Speaker</div>
+                    <div class="product-rating">
+                        <div class="rating-stars">★★★★☆</div>
+                        <div class="rating-count">6,789</div>
+                    </div>
+                    <div class="product-price">$89<span class="price-decimal">99</span></div>
+                    <div class="prime-badge">
+                        <i class="fab fa-amazon"></i> Prime
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            Back to top
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Get to Know Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About Amazon</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Amazon Devices</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Make Money with Us</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Sell products on Amazon</a></li>
+                    <li><a href="#">Sell on Amazon Business</a></li>
+                    <li><a href="#">Sell apps on Amazon</a></li>
+                    <li><a href="#">Become an Affiliate</a></li>
+                    <li><a href="#">Advertise Your Products</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Amazon Payment Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Amazon Business Card</a></li>
+                    <li><a href="#">Shop with Points</a></li>
+                    <li><a href="#">Reload Your Balance</a></li>
+                    <li><a href="#">Amazon Currency Converter</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Let Us Help You</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Amazon and COVID-19</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Your Orders</a></li>
+                    <li><a href="#">Shipping Rates & Policies</a></li>
+                    <li><a href="#">Returns & Replacements</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-logo">
+            <img src="/api/placeholder/100/30" alt="Amazon Logo">
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                <a href="#">Conditions of Use</a>
+                <a href="#">Privacy Notice</a>
+                <a href="#">Interest-Based Ads</a>
+            </div>
+            <div style="margin-top: 10px;">© 1996-2025, Amazon.com, Inc. or its affiliates</div>
+        </div>
+    </footer>
+
+    <!-- AR Modal -->
+    <div class="modal" id="arModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Try in Your Space with AR</div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="device-selector">
+                    <h3>Choose how you want to view</h3>
+                    <div class="device-options">
+                        <div class="device-option selected" id="desktopOption">
+                            <div class="device-icon"><i class="fas fa-desktop"></i></div>
+                            <div class="device-name">Desktop Preview</div>
+                        </div>
+                        <div class="device-option" id="mobileOption">
+                            <div class="device-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <div class="device-name">Mobile AR</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ar-preview desktop-preview" id="desktopPreview">
+                    <img src="/api/placeholder/800/400" alt="Living Room" class="ar-video">
+                    <img src="/api/placeholder/200/200" alt="Office Chair" class="ar-product">
+                    <div class="media-controls">
+                        <button class="media-button"><i class="fas fa-arrows-alt"></i></button>
+                        <button class="media-button"><i class="fas fa-redo"></i></button>
+                        <button class="media-button"><i class="fas fa-expand"></i></button>
+                        <button class="media-button"><i class="fas fa-compress"></i></button>
+                    </div>
+                </div>
+
+                <div class="ar-preview mobile-preview" id="mobilePreview" style="display: none;">
+                    <div class="qr-container">
+                        <div class="qr-code">
+                            <img src="/api/placeholder/200/200" alt="QR Code">
+                        </div>
+                        <div class="qr-instructions">
+                            <p>Scan this QR code with your mobile device to experience this product in AR in your own
+                                space.</p>
+                            <p>Works with iOS 12+ and Android 8.0+ devices that support ARKit or ARCore.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button cancel-button" id="closeArModal">Cancel</button>
+                <button class="modal-button continue-button">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        const arModal = document.getElementById('arModal');
+        const openArModalBtn = document.getElementById('openArModal');
+        const closeArModalBtn = document.getElementById('closeArModal');
+        const closeModalX = document.querySelector('.close-modal');
+
+        openArModalBtn.addEventListener('click', () => {
+            arModal.style.display = 'flex';
+        });
+
+        closeArModalBtn.addEventListener('click', () => {
+            arModal.style.display = 'none';
+        });
+
+        closeModalX.addEventListener('click', () => {
+            arModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === arModal) {
+                arModal.style.display = 'none';
+            }
+        });
+
+        // AR View Tabs
+        const desktopOption = document.getElementById('desktopOption');
+        const mobileOption = document.getElementById('mobileOption');
+        const desktopPreview = document.getElementById('desktopPreview');
+        const mobilePreview = document.getElementById('mobilePreview');
+
+        desktopOption.addEventListener('click', () => {
+            desktopOption.classList.add('selected');
+            mobileOption.classList.remove('selected');
+            desktopPreview.style.display = 'block';
+            mobilePreview.style.display = 'none';
+        });
+
+        mobileOption.addEventListener('click', () => {
+            mobileOption.classList.add('selected');
+            desktopOption.classList.remove('selected');
+            mobilePreview.style.display = 'block';
+            desktopPreview.style.display = 'none';
+        });
+
+        // Product options
+        const productOptions = document.querySelectorAll('.product-option');
+        const arProduct = document.querySelector('.ar-product');
+        const modalProduct = document.querySelector('.ar-preview .ar-product');
+
+        productOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                productOptions.forEach(opt => opt.classList.remove('active'));
+
+                // Add active class to clicked option
+                option.classList.add('active');
+
+                // Change product image (in real implementation this would load different 3D models)
+                const product = option.getAttribute('data-product');
+                // For demo purposes, we just use placeholder images
+                arProduct.alt = product;
+                if (modalProduct) modalProduct.alt = product;
+            });
+        });
+
+        // Simulating product rotation with mouse movement on AR interface
+        const arInterface = document.querySelector('.ar-interface');
+        const rotateProduct = (e) => {
+            const x = e.clientX - arInterface.getBoundingClientRect().left;
+            const y = e.clientY - arInterface.getBoundingClientRect().top;
+
+            // Calculate rotation based on mouse position
+            const rotateY = ((x / arInterface.offsetWidth) - 0.5) * 30;
+            const rotateX = ((y / arInterface.offsetHeight) - 0.5) * -20;
+
+            // Apply rotation to product
+            arProduct.style.transform = `translate(-50%, -50%) rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(0.8)`;
+        };
+
+        arInterface.addEventListener('mousemove', rotateProduct);
+        arInterface.addEventListener('mouseleave', () => {
+            arProduct.style.transform = 'translate(-50%, -50%) scale(0.8)';
+        });
+
+        // AR control buttons functionality
+        const arButtons = document.querySelectorAll('.ar-button');
+        let scale = 0.8;
+        let rotation = 0;
+
+        arButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                switch (index) {
+                    case 0: // Rotate
+                        rotation += 45;
+                        arProduct.style.transform = `translate(-50%, -50%) rotateY(${rotation}deg) scale(${scale})`;
+                        break;
+                    case 1: // Resize
+                        scale = scale === 0.8 ? 1.2 : 0.8;
+                        arProduct.style.transform = `translate(-50%, -50%) rotateY(${rotation}deg) scale(${scale})`;
+                        break;
+                    case 2: // Reset
+                        scale = 0.8;
+                        rotation = 0;
+                        arProduct.style.transform = 'translate(-50%, -50%) scale(0.8)';
+                        break;
+                }
+            });
+        });
+
+        // Media controls in modal
+        const mediaButtons = document.querySelectorAll('.media-button');
+        let modalScale = 1;
+        let modalRotation = 0;
+
+        mediaButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                switch (index) {
+                    case 0: // Move
+                        // In a real implementation, this would enable drag mode
+                        break;
+                    case 1: // Rotate
+                        modalRotation += 45;
+                        modalProduct.style.transform = `translate(-50%, -50%) rotateY(${modalRotation}deg) scale(${modalScale})`;
+                        break;
+                    case 2: // Enlarge
+                        modalScale += 0.2;
+                        modalProduct.style.transform = `translate(-50%, -50%) rotateY(${modalRotation}deg) scale(${modalScale})`;
+                        break;
+                    case 3: // Shrink
+                        if (modalScale > 0.4) modalScale -= 0.2;
+                        modalProduct.style.transform = `translate(-50%, -50%) rotateY(${modalRotation}deg) scale(${modalScale})`;
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
